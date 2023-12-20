@@ -5,7 +5,7 @@ This Python script implements a terrain-following algorithm for a drone using RO
 
 ## Dependencies
 - ROS (Robot Operating System)
-- Python 3
+- Python 3,,
 
 ## Node Information
 - **Node Name:** terrain_follower_node
