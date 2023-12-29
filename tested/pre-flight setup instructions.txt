@@ -1,0 +1,33 @@
+Step 1: Run the ROS Node for the Realsense camera
+
+roslaunch realsense2_camera rs_camera.launch
+
+Step 2: Run depth_data_acq.py
+
+cd catkin_ws
+cd src
+cd i_drone
+cd scripts
+python depth_data_acq.py
+
+Step 3: Run THS1 command
+
+sudo chmod 666 /dev/ttyTHS1
+
+Step 4: Run i_drone.launch (master node)
+
+roslaunch i_drone i_drone.launch
+
+Step 5: Run the 2 special commands\
+
+rosrun mavros mavparam set SYSID_MYGCS 1
+
+rosrun mavros mavsys rate --all 10
+
+Step 6: Run baro_threshold_terrain_camera.py
+
+cd catkin_ws
+cd src
+cd i_drone
+cd scripts
+python baro_threshold_terrain_camera.py
